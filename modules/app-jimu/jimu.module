@@ -1,0 +1,12 @@
+#!url=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/app-jimu/jimu.module
+#!name=积目APP
+#!desc=解锁积目VIP;屏蔽跟踪上报;
+
+[Rule]
+DOMAIN-SUFFIX,maidian.hitup.cn,REJECT
+
+[Script]
+jimu-vip = type=http-response,pattern=^https:\/\/service\.hitup\.cn\/,requires-body=1,max-size=131072,script-path=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/app-jimu/jimu.js?v=3,enable=1
+
+[MITM]
+hostname = %APPEND% service.hitup.cn
