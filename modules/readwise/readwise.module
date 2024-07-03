@@ -1,0 +1,9 @@
+#!url=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/readwise/readwise.module
+#!name=readwise
+#!desc=解锁VIP
+
+[Script]
+readwise-vip = type=http-response,pattern=^https:\/\/readwise\.io\/reader\/api\/profile_details\/,requires-body=1,max-size=131072,script-path=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/readwise/readwise.js,enable=1
+
+[MITM]
+hostname = %APPEND% readwise.io
