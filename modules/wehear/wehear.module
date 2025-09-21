@@ -1,0 +1,10 @@
+#!url=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/wehear/wehear.module
+#!name=微信听书
+#!desc=解锁微信听书VIP会员
+
+[Script]
+wehear-member = type=http-response,pattern=^https:\/\/i\.at\.qq\.com\/pay\/memberinfo,requires-body=1,max-size=131072,script-path=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/wehear/wehear.js,enable=1
+wehear-profile = type=http-response,pattern=^https:\/\/i\.at\.qq\.com\/mine,requires-body=1,max-size=131072,script-path=https://github.com/zbtang/LittleRocketConfig/raw/main/modules/wehear/wehear.js,enable=1
+
+[MITM]
+hostname = %APPEND% i.at.qq.com
